@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  type: false
+  sauce: MyString
+  sauce_heat: 1
+  sauce_flavor: 1
+  texture: 1
+  served_with: MyString
+
+two:
+  type: false
+  sauce: MyString
+  sauce_heat: 1
+  sauce_flavor: 1
+  texture: 1
+  served_with: MyString

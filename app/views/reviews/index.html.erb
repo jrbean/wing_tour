@@ -1,0 +1,10 @@
+<% if @reviews.any? %>
+    <% @reviews.each do |review| %>
+        <h2><%= review.title %></h2>
+        <h3><%= review.restaurant %></h3>
+        <h4>by <%= link_to review.user.username, user_path(review.user) %> <%= time_ago_in_words(review.created_at) %></h4>
+        <p><%= truncate(review.body, :length => 100) %></p>
+    <% end %>
+<% else %>
+    <h1>There doesn't seem to be anything here yet!</h1>
+<% end %>
