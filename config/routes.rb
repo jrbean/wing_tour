@@ -2,6 +2,10 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :reviews
+  resources :users, only: [:index, :show, :update]
+
+  get    'about'   => 'static_pages#about'
+  get    'contact' => 'static_pages#contact'
 
   root 'reviews#index'
   # The priority is based upon order of creation: first created -> highest priority.

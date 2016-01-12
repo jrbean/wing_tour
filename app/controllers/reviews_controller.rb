@@ -5,7 +5,7 @@ class ReviewsController < ApplicationController
   end
 
   def show
-    @review = Review.find_by(params[:id])
+    @review = Review.find(params[:id])
   end
 
   def new
@@ -16,11 +16,11 @@ class ReviewsController < ApplicationController
   end
 
   def destroy
-    @review = Review.find_by(params[:id])
+    @review = Review.find(params[:id])
   end
 
   def update
-    @review = Review.find_by(params[:id])
+    @review = Review.find(params[:id])
   end
 
   def edit

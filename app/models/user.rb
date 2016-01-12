@@ -10,6 +10,10 @@ class User < ActiveRecord::Base
     :case_sensitive => false
   }
   validate :validate_username
+  has_many :reviews
+  has_many :comments
+  validates :bio, length: { maximum: 500,
+    too_long: "%{count} characters is the maximum allowed" }
 
   attr_accessor :login
 

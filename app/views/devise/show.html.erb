@@ -1,0 +1,12 @@
+<h1><%= @user.username.capitalize %></h1>
+<p><%= @user.bio %></p>
+<% if current_user %>
+    <% if current_user.id == @user.id %>
+        <div class="bioform">
+            <%= simple_form_for @user do |f| %>
+                <%= f.input :bio, placeholder: "Let everyone know who you are!" %>
+                <%= f.button "Update Profile", class: "btn btn-primary" %>
+            <% end %>
+        </div>
+    <% end %>
+<% end %>
