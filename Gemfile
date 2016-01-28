@@ -13,6 +13,7 @@ gem 'pg'
 gem 'twitter-bootstrap-rails'
 gem 'bootstrap_form'
 gem 'simple_form'
+gem 'cocoon'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'

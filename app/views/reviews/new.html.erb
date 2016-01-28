@@ -1,0 +1,19 @@
+<h1>Write a Review</h1>
+<%= simple_form_for @review do |f| %>
+  <%= f.input :restaurant %>
+  <%= f.input :title %>
+  <%= f.input :body, as: :text, placeholder: 'Write about your experience.' %>
+  <%= f.input :specials, placeholder: '$.50 wings, happy hour wings, etc.' %>
+  <h3>Wings</h3>
+  <div id="wings">
+    <%= f.simple_fields_for :wings do |wing| %>
+      <%= render 'wing_fields', :f => wing %>
+    <% end %>
+    <div class="links">
+        <%= link_to_add_association 'add wing', f, :wings %>
+    </div>
+  </div>
+  <% f.buttons do %>
+    <%= f.submit 'Save' %>
+  <% end %>
+<% end %>

@@ -1,0 +1,9 @@
+<div class="nested-fields">
+  <%= f.collection_radio_buttons :type, [[true, 'Regular'] ,[false, 'Boneless']] %>
+  <%= f.input :sauce %>
+  <%= f.input :sauce_heat, collection: 1..10 %>
+  <%= f.input :sauce_flavor, collection: 1..10 %>
+  <%= f.input :texture, collection: 1..5 %>
+  <%= f.input :served_with, placeholder: 'Celery, carrots, ranch, etc.' %>
+  <%= link_to_remove_association "remove task", f %>
+</div>

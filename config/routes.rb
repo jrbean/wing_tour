@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  resources :reviews
+  resources :reviews do
+    resources :wings
+  end
+
   resources :users, only: [:index, :show, :update]
 
   get    'about'   => 'static_pages#about'
