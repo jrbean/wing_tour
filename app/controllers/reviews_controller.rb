@@ -10,12 +10,10 @@ class ReviewsController < ApplicationController
 
   def new
     @review = Review.new
-    @wing = Wing.new
   end
 
   def create
     @review = Review.create(review_params)
-    @wing = Wing.create(wing_params)
     redirect_to @review
   end
 
@@ -34,7 +32,7 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(:restaurant, :title, :body, :specials, wings_attributes: [:id, :type, :sauce, :sauce_heat, :sauce_flavor, :texture, :served_with])
+    params.require(:review).permit(:restaurant, :title, :body, :specials, wings_attributes: [:id, :type, :sauce, :sauce_heat, :sauce_flavor, :texture, :served_with, :_destroy])
   end
 
  # def wing_params
